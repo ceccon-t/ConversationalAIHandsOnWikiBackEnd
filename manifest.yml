@@ -1,0 +1,7 @@
+---
+application:
+- name: conversational-ai-wiki-backend
+  memory: 128MB
+  disk_quota: 256MB
+  random-route: true
+  host: caiwikibackend

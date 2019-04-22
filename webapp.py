@@ -26,7 +26,7 @@ def index_get():
 def index():
     if running_local:
         data = json.loads(request.get_data())
-        with open(os.path.join("logs", "request_payload_" + str(datetime.datetime.now()) + ".json"), 'w') as f:
+        with open(os.path.join("logs", "request_payload_" + str(datetime.datetime.now()).replace(".", "-").replace(":", "-").replace(" ", "-") + ".json"), 'w') as f:
             f.write(json.dumps(data))
 
     return jsonify(
