@@ -1,0 +1,15 @@
+{
+  "name": "Conversational AI Hands On Wikipedia Backend",
+  "description": "Backend for hands on activity about Conversational AI",
+  "image": "heroku/python",
+  "repository": "https://github.com/ceccon-t/ConversationalAIHandsOnWikiBackEnd",
+  "keywords": ["python", "flask"],
+  "addons": ["heroku-postgresql"],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "webapp.py test"
+      }
+    }
+  }
+}
