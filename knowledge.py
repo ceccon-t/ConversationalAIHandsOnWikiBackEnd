@@ -16,8 +16,11 @@ def _get_extracted_text(response_string):
     pages = json.loads(response_string)["query"]["pages"]
     if "-1" in pages:
         return ""
-    element = pages[[k for k in pages.keys()][0]]
-    return element["extract"]
+    extract = pages[[k for k in pages.keys()][0]]["extract"]
+    if len(extract) > 600:
+        shorter_extract = extract[0:600]
+        extract = shorter_extract[0:shorter_extract.rfind(". ")+1]
+    return extract
 
 
 def get_best_wikipedia_link(subject):
