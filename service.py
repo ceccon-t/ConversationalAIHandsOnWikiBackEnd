@@ -17,12 +17,14 @@ def process_info(request):
 
 
 def reply_information(request):
-    message = ""
+    replies = []
     for person in request.get_all_values_for_entity('person'):
+        message = ""
         current_response = knowledge.get_wikipedia_intro(person)
         if current_response == "":
             current_response = "Hmmm... I do not know anything about that. Are you sure the spelling is correct?"
         message += current_response
-    return [_reply("text", message)]
+        replies.append(_reply("text", message))
+    return replies
 
 
