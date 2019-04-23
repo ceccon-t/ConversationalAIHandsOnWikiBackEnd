@@ -22,7 +22,7 @@ def reply_information(request):
         message = ""
         current_response = knowledge.get_wikipedia_intro(person)
         if current_response == "":
-            current_response = "Hmmm... I do not know anything about that. Are you sure the spelling is correct?"
+            current_response = "Hmmm... I do not know anything about " + person + ". Are you sure the spelling is correct?"
         message += current_response
         replies.append(_reply("text", message))
     return replies
